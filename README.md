@@ -10,10 +10,10 @@ Released under a [MIT license](http://en.wikipedia.org/wiki/MIT_License).
 Features
 --------
 
+* Clean urls
 * Default routes /controller/action/arg/arg/arg
 * Customizable routes
 * Customizable directory structure
-* Customizable routes
 
 Docs
 --------
