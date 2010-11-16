@@ -25,7 +25,7 @@ class Tad {
 		$controller = 'main',
 		$action = 'index',
 		$args = array(),
-	    $routes = array();
+		$routes = array();
 
 	public static function getInstance(){
 		if (!self::$instance) self::$instance = new Tad();
