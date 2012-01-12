@@ -1,0 +1,16 @@
+{
+	"name": "tad",
+	"version": "0.0.1",
+	"main": "./lib/tad/tad",
+	"files": ["README.md"],
+	"author": {
+		"name": "Shane Thacker"
+	},
+	"engines": {
+		"node" : ">=0.4.0"
+	}
+}
+
+
+
+

@@ -10,6 +10,7 @@ body		{
 			text-align: left;
 			padding: 0;
 			background: #fff;
+/*			background: #032439;*/
 			margin: 30px;
 			}
 
@@ -19,11 +20,16 @@ h1, h2, h3, h4, h5, h6 {
 			line-height: 1.2;
 			margin-bottom: 9px;
 			font-family: Helvetica, Arial, Geneva, sans-serif;
+			font-family: "andale mono";
 			}
 
 h1 			{
 			font-size: 28px;
-			color: #ff5533;
+			color: #f33;
+			}
+
+h1 em 			{
+			background: #ef6;
 			}
 
 h2 			{
@@ -39,7 +45,7 @@ h4 			{ font-size: 16px; }
 h5 			{ margin-bottom: 9px; }
 
 ol			{ list-style: decimal; }
-ul 			{ list-style: circle; }
+ul 			{ list-style: circle; list-style-type: none; }
 li			{ margin-left: 0px }
 
 a, a:hover	{ color: #0099cc; text-decoration: none; border-bottom: 1px solid #0099cc; }
@@ -73,31 +79,70 @@ pre 		{
 			color: #fff;
 			overflow: auto;
 			margin: 0;
-			background: #e3dddc;
-			background: #eeebea;
 			color: #111;
+			background: rgba(200,200,200,.1);
 			}
+
+
+pre#issue 		{
+			font-family: monospace;
+			font-family: "andale mono";
+			padding: 10px;
+			background: #000;
+			-webkit-border-radius: 5px;
+			color: #fff;
+			overflow: auto;
+			margin: 0;
+			color: #111;
+			background: rgba(200,200,200,.1);
+
+
+			font-weight: normal;
+			color: #003366;
+			line-height: 1.2;
+			margin-bottom: 9px;
+			font-family: Helvetica, Arial, Geneva, sans-serif;
+			font-family: "andale mono";
+
+			font-size: 28px;
+			color: #f33;
+			}
+
+
+
+pre#issue > anonymous {
+	margin: 5px 0;
+	display: block;
+			font-weight: normal;
+			color: #003366;
+			line-height: 1.2;
+			margin-bottom: 9px;
+			font-family: Helvetica, Arial, Geneva, sans-serif;
+			font-family: "andale mono";
+
+			font-size: 18px;
+			color: #f33;
+}
+
+anonymous anonymous {
+	margin: 5px 0;
+	margin-left: 15px;
+/*	background: #ccf;*/
+}
+
 	</style>
 </head>
 
 <body>
-	<h1>Exception: <?= $e->getMessage(); ?></h1>
-
-	<h2>File</h2>
-	<pre><?= $e->getFile()?></pre>
-
-	<h2>Line</h2>
-	<pre><? $line = $e->getTrace(); echo $line[0]['line']; ?></pre>
-
-			
+<!--	<h1>Exception: <em>{{e.message}}</em></h1>-->
+	<h1><em>{{error}}</em></h1>
+	<h1><em>{{error.lines}}</em></h1>
 
 	<h2>Trace</h2>
-	<pre><? print_r ($e->getTraceAsString()); ?></pre>
+	<pre id="issue">{{error.stack}}</pre>
 
-	<h2>Exception Object</h2>
-	<pre><? print_r ($e); ?></pre>
 
 	<h2>Var Dump</h2>
-	<pre><? debug_print_backtrace(); ?></pre>
+	<pre>{{dump}}</pre>
 </body>
 </html>
