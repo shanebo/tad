@@ -1,15 +1,15 @@
 {
-	"name": "tad",
+	"name": "node-tad",
 	"version": "0.0.1",
 	"description": "A tiny server, middleware, view, and controller framework.",
 	"keywords": ["framework"],
 	"repository": "git://github.com/shanebo/tad.git",
 	"author": "Shane Thacker <shane@steadymade.com>",
-	"main": "./lib/tad/tad"
+	"main": "./lib/tad/tad",
 	"dependencies": {
 		"open-uri": "0.3.5",
 		"mime": "1.2.4",
 		"beard": "0.0.1"
 	},
-	"engine": ">= 0.4.1",
+	"engine": ">= 0.4.1"
 }
